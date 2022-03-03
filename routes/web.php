@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ProduitsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,27 +19,24 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/admin', function () {
-    return view('admin');
-});
-Route::get('/cadre', function () {
-    return view('cadre');
-});
-Route::get('/technicien', function () {
-    return view('technicien');
-});
-
 Route::get('/inscription', function () {
     return view('inscription');
 });
 Route::get('/connexion', function () {
     return view('connexion');
 });
+Route::get('/produits_add', function () {
+    return view('produits_add');
+});
+Route::prefix('categories')->group(function () {
 
-
-Route::prefix('books')->group(function () {
-    Route::get('/', [BooksController::class, 'index']);
-    Route::get('/{id}', [BooksController::class, 'get']);
+Route::get('/', [CategoriesController::class, 'index'])->name('categories');
+Route::post('/', [CategoriesController::class, 'add']);
+});
+Route::prefix('produits')->group(function () {
+    Route::get('/admin', [ProduitsController::class, 'admin']);
+    Route::get('/cadre', [ProduitsController::class, 'cadre']);
+    Route::get('/technicien', [ProduitsController::class, 'technicien']);
 });
 
 Route::get('/404', function () {
