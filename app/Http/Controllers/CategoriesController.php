@@ -40,7 +40,7 @@ class CategoriesController extends Controller
             '/Ç/' => 'C',
             '/ñ/' => 'n',
             '/Ñ/' => 'N',
-            ' ' => '-'
+            '/ /' => '-'
             );
             return strtolower(preg_replace(array_keys($utf8), array_values($utf8), $string));
         
