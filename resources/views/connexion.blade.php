@@ -1,4 +1,4 @@
-﻿@extends('layout.app')
+﻿@extends('layout.app', ['nakedView'=> true])
 
 @section('main')
 <section class="vh-100">
@@ -9,28 +9,28 @@
             alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form>
-        
+          <form method="POST">
+        @csrf
             <div class="divider d-flex align-items-center my-4">
               <p class="text-center fw-bold mx-3 mb-0">Se connecter</p>
             </div>
   
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" class="form-control form-control-lg"
+              <input type="email" name="email" class="form-control form-control-lg"
                 placeholder="Enter a valid email address" />
               <label class="form-label">Email</label>
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <input type="password" class="form-control form-control-lg"
+              <input type="password" name="password" class="form-control form-control-lg"
                 placeholder="Enter password" />
               <label class="form-label">Mot de passe</label>
             </div>
   
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg"
+              <button type="input" class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Se connecter</button>
               <p class="small fw-bold mt-2 pt-1 mb-0">Pas de compte? <a href="#!"class="link-danger">S'inscrire</a></p>
             </div>

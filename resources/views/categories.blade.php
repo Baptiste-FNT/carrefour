@@ -2,42 +2,31 @@
 
 @section('main')
     <section class="">
-        @include('components.form-categorie')
+        @includeWhen($isAdmin, 'components.form-categorie')
         <h2>Voir les Produits</h2>
-        <div class="overflow-scroll">
-            <table class="table table-hover ">
-                <thead>
-                    <tr>
-                        <td scope="col">#</td>
-                        <td scope="col">produit</td>
-                        <td scope="col">description</td>
-                        <td scope="col">description</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($categories as $categorie)
-                        <tr>
-                            <td scope="col">{{ $categorie->id }}</td>
-                            <td scope="col">
-                                <a href="/categories/{{ $categorie->id }}">
-                                    {{ $categorie->nom }}
-                                </a>
-                            </td>
+        <div class="overflow-auto row">
+            @foreach ($categories as $categorie)
+                <div class="card col-4 m-auto mb-3" style="width:18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="/categories/{{ $categorie->id }}">
+                                {{ $categorie->nom }}
+                            </a>
+                        </h5>
+                        <p class="card-text">
+                            {{ $categorie->description }}
+                        </p>
+                    </div>
+                    @if ($isAdmin)
+                        <div class="card-footer">
+                            @include('components.form-categorie', [
+                                'categorie' => $categorie,
+                            ])
+                        </div>
+                    @endif
 
-                            <td scope="col">
-                                {{ $categorie->description }}
-                            </td>
-                            <td>
-
-                                @include('components.form-categorie',['categorie'=>$categorie])
-
-                                <a href="crudUtilisateur/delete.php?id=" class="trash"><i
-                                        class="bi bi-trash-fill"></i></a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                </div>
+            @endforeach
         </div>
     </section>
 @endsection

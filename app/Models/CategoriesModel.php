@@ -11,8 +11,8 @@ class CategoriesModel extends Model
     protected $table = 'categories';
     public $timestamps = false;
 
-    public function categories()
+    public function produits()
     {
-        return $this->belongsTo(CategoriesModel::class, 'nom', 'id');
+        return $this->hasMany(ProduitsModel::class, 'categorie_id');
     }
 }
