@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    @includeUnless(isset($nakedView), 'layout.navbar');
+    @includeUnless(isset($nakedView), 'layout.navbar')
     <main class="container">
         @yield("main")
     </main>

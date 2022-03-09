@@ -50,28 +50,6 @@
                     </div>
                     <!-- Grid column -->
 
-                    <!-- Grid column -->
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold">Products</h6>
-                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
-                            style="width: 60px; background-color: #7c4dff; height: 2px" />
-                        <p>
-                            <a href="#!" class="text-white">MDBootstrap</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-white">MDWordPress</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-white">BrandFlow</a>
-                        </p>
-                        <p>
-                            <a href="#!" class="text-white">Bootstrap Angular</a>
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-
                 </div>
                 <!-- Grid row -->
             </div>
@@ -80,8 +58,7 @@
 
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            © 2020 Copyright: Carrefour Stock
         </div>
         <!-- Copyright -->
     </footer>
